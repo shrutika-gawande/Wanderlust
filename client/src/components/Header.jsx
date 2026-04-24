@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom'
 import "../styles/header.css"
 
 function Header() {
@@ -7,7 +8,6 @@ function Header() {
 
   return (
     <nav className='header'>
-
 
       <div className="logo">
         <div className="logo-mark">✈</div>
@@ -23,14 +23,14 @@ function Header() {
 
       <div className={`menu ${menuOpen ? "open" : ""}`}>
         <div className="header-links">
-          <a href=''>Home</a>
-          <a href=''>About Us</a>
-          <a href=''>Destinations</a>
-          <a href=''>Packages</a>
-          <a href=''>Contact</a>
+          <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
+          <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About Us</NavLink>
+          <NavLink to="/destinations" className={({ isActive }) => isActive ? 'active' : ''}>Destinations</NavLink>
+          <NavLink to="/packages" className={({ isActive }) => isActive ? 'active' : ''}>Packages</NavLink>
+          <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink>
         </div>
 
-        <button className='cta-btn'>Book Now</button>
+        <button className='cta-btn btn-gold'>Book Now</button>
       </div>
 
     </nav>
