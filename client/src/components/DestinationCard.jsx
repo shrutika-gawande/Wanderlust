@@ -48,10 +48,13 @@ function DestinationCard({ data, onClick }) {
 
           <div className="rating">
             <span className="stars">{"★".repeat(Math.floor(data.rating))}</span>
-           <span>{data.rating} ({data.reviewCount})</span>
+            <span>{data.rating} ({data.reviewCount})</span>
           </div>
 
-          <button onClick={() => navigate("/packages")} className="btn-outline">
+          <button onClick={(e) => {
+            e.stopPropagation(); // stop card click
+            navigate("/packages");
+          }} className="btn-outline">
             View Packages
           </button>
 
