@@ -33,7 +33,7 @@ function Destinations() {
         </div>
 
         <section className="section">
-          <div className="destinations-container">
+          <div className="container">
 
             <div className="filter-bar">
               <div className="filter-search">
