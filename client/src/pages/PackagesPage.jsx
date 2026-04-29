@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "../styles/packages.css"
 import PackageCard from '../components/PackageCard.jsx'
 import PackageModal from '../components/PackageModal.jsx'
+import BookingModal from '../components/BookingModal.jsx'
 import { PACKAGES } from "../data.js"
 
 function Packages() {
@@ -98,9 +99,9 @@ function Packages() {
                   data={item}
                   onDetails={() => setSelectedPackage(item)}
                   // onBook={() => setBookingPackage(item)}
-                  onBook={(pkg) => {
+                  onBook={() => {
                     setSelectedPackage(null);   // close details modal
-                    setBookingPackage(pkg);     // open booking modal
+                    setBookingPackage(item);     // open booking modal
                   }}
                 />
               ))}
