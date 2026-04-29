@@ -21,7 +21,7 @@ function PackageModal({ data, onClose, onBook }) {
   }, []);
 
   return (
-    <div className="pkg-detail-overlay open" onClick={onClose}>
+    <div className="overlay open" onClick={onClose}>
       
       {/* MODAL BOX */}
       <div
