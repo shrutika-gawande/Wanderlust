@@ -45,7 +45,7 @@ function PackageCard({ data, onDetails, onBook }) {
               }}>Details</button>
               <button className="btn-gold" onClick={(e) => {
                 e.stopPropagation();
-                onBook(data);
+                onBook();
               }}>Book Now</button>
             </div>
           </div>
