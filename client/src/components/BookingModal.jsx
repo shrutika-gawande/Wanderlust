@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import "../styles/bookingModal.css";
 
 function BookingModal({ data, onClose }) {
@@ -11,6 +12,8 @@ function BookingModal({ data, onClose }) {
     date: "",
     request: "",
   });
+
+  const [validated, setValidated] = useState(false);
 
   // ESC close
   useEffect(() => {
@@ -31,6 +34,25 @@ function BookingModal({ data, onClose }) {
 
   const total = form.travellers * data.price;
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formEl = e.currentTarget;
+
+    if (formEl.checkValidity() === false) {
+      e.stopPropagation();
+      setValidated(true);
+      return;
+    }
+
+    // ✅ SUCCESS
+    toast.success("Booking Confirmed 🎉");
+
+    console.log("Booking Data:", form);
+
+    onClose();
+  };
+
   return (
     <div className="booking-overlay" onClick={onClose}>
       <div className="booking-modal" onClick={(e) => e.stopPropagation()}>
@@ -46,31 +68,98 @@ function BookingModal({ data, onClose }) {
         </div>
 
         {/* Form */}
-        <div className="booking-body">
+        <form
+          noValidate
+          className={`booking-body needs-validation ${validated ? "was-validated" : ""}`}
+          onSubmit={handleSubmit}
+        >
 
-          <label>First Name *</label>
-          <input name="firstName" onChange={handleChange} placeholder="Rahul" />
+           {/* First Name */}
+          <div className="mb-3">
+            <label className="form-label">First Name *</label>
+            <input
+              type="text"
+              name="firstName"
+              className="form-control"
+              required
+              onChange={handleChange}
+            />
+            <div className="invalid-feedback">
+              Please enter first name
+            </div>
+          </div>
 
-          <label>Last Name *</label>
-          <input name="lastName" onChange={handleChange} placeholder="Sharma" />
+          {/* Last Name */}
+          <div className="mb-3">
+            <label className="form-label">Last Name *</label>
+            <input
+              type="text"
+              name="lastName"
+              className="form-control"
+              required
+              onChange={handleChange}
+            />
+            <div className="invalid-feedback">
+              Please enter last name
+            </div>
+          </div>
 
-          <label>Email *</label>
-          <input name="email" onChange={handleChange} placeholder="rahul@email.com" />
+          {/* Email */}
+          <div className="mb-3">
+            <label className="form-label">Email *</label>
+            <input
+              type="email"
+              name="email"
+              className="form-control"
+              required
+              onChange={handleChange}
+            />
+            <div className="invalid-feedback">
+              Enter valid email
+            </div>
+          </div>
 
-          <label>Phone *</label>
-          <input name="phone" onChange={handleChange} placeholder="+91 98765 43210" />
+          {/* Phone */}
+          <div className="mb-3">
+            <label className="form-label">Phone *</label>
+            <input
+              type="tel"
+              name="phone"
+              className="form-control"
+              required
+              pattern="[0-9]{10}"
+              onChange={handleChange}
+            />
+            <div className="invalid-feedback">
+              Enter valid 10-digit phone
+            </div>
+          </div>
 
-          <label>No. of Travellers *</label>
-          <input
-            type="number"
-            name="travellers"
-            value={form.travellers}
-            min="1"
-            onChange={handleChange}
-          />
+          {/* Travellers */}
+          <div className="mb-3">
+            <label className="form-label">Travellers *</label>
+            <input
+              type="number"
+              name="travellers"
+              className="form-control"
+              min="1"
+              required
+              value={form.travellers}
+              onChange={handleChange}
+            />
+          </div>
 
-          <label>Travel Date *</label>
-          <input type="date" name="date" onChange={handleChange} />
+          {/* Date */}
+          <div className="mb-3">
+            <label className="form-label">Travel Date *</label>
+            <input
+              type="date"
+              name="date"
+              className="form-control"
+              required
+              onChange={handleChange}
+            />
+          </div>
 
           <label>Special Requests</label>
           <textarea
@@ -85,11 +174,11 @@ function BookingModal({ data, onClose }) {
             <strong style={{color:"var(--teal)", fontSize:"1rem"}}>Total: ₹{total}</strong>
           </div>
 
-          <button className="btn-gold confirm-btn">
+          <button type="submit" className="btn-gold confirm-btn">
             ✦ Confirm Booking
           </button>
 
-        </div>
+        </form>
       </div>
     </div>
   );
