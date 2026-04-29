@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import "../styles/header.css"
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className='header'>
@@ -30,7 +31,7 @@ function Header() {
           <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink>
         </div>
 
-        <button className='cta-btn btn-gold'>Book Now</button>
+        <button onClick={() => navigate("/packages")} className='cta-btn btn-gold'>Book Now</button>
       </div>
 
     </nav>
