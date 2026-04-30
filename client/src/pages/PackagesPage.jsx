@@ -30,7 +30,7 @@ function Packages() {
 
   return (
     <>
-      <div className="page" id="page-packages">
+      <div className="pkg-page" id="page-packages">
         <div className="page-hero-inner">
           <div className="container">
             <div className="breadcrumb"><a>Home</a> / <span>Packages</span></div>

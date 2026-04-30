@@ -23,7 +23,7 @@ function Destinations() {
 
   return (
     <>
-      <div className="page">
+      <div className="dest-page">
         <div className="page-hero-inner">
           <div className="container">
             <div className="breadcrumb"><a>Home</a> / <span>Destinations</span></div>
