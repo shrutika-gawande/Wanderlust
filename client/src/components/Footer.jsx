@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "../styles/footer.css"
 
 function Footer() {
@@ -26,11 +27,11 @@ function Footer() {
                 <div className="quick-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a>Home</a></li>
-                        <li><a>About Us</a></li>
-                        <li><a>Destinations</a></li>
-                        <li><a>Packages</a></li>
-                        <li><a>Contact</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/destinations">Destinations</Link></li>
+                        <li><Link to="/packages">Packages</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
                     </ul>
                 </div>
 
@@ -45,12 +46,12 @@ function Footer() {
                     </ul>
                 </div>
 
-                <div className="newsletter">
+                <div className="newsletter quick-links">
                     <h4>Newsletter</h4>
                     <p>Get exclusive deals, travel inspiration, and destination guides in your inbox.</p>
                     <div className='newsletter-input'>
                         <input type="email" placeholder='your@email.com' />
-                        <button> → </button>
+                        <button className='btn-gold'> → </button>
                     </div>
                     {/* <p id="newsletterMsg" style="margin-top:10px;font-size:.78rem;color:var(--gold-pale);display:none">✓ You're subscribed!</p> */}
                 </div>
