@@ -92,7 +92,7 @@ function Packages() {
 
             <p id="pkgCount" style={{ fontSize: ".85rem", color: "var(--ink-soft)", marginBottom: "24px" }}></p>
 
-            <div className="pkg-grid" id="pkgListGrid">
+            <div className="pkg-grid">
               {filterdPackages.map((item) => (
                 <PackageCard
                   key={item._id}
