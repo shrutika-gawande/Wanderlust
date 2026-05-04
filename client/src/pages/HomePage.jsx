@@ -146,7 +146,7 @@ function Homepage() {
             </div>
 
             <div style={{ textAlign: "center", marginTop: "40px" }}>
-              <button className="btn btn-outline-gold">View All Packages →</button>
+              <button className="btn btn-outline-gold" onClick={() => navigate("/packages")}>View All Packages →</button>
             </div>
           </div>
         </section>
