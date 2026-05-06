@@ -116,6 +116,10 @@ function Packages() {
         <PackageModal
           data={selectedPackage}
           onClose={() => setSelectedPackage(null)}
+          onBook={(pkgData) => {
+            setSelectedPackage(null);
+            setBookingPackage(pkgData);
+          }}
         />
       )}
 
