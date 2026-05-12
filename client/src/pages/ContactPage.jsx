@@ -33,7 +33,7 @@ function Contact() {
                 </div>
                 <div className="contact-item">
                   <div className="contact-icon">📞</div>
-                  <div><h4>Call Us</h4><p>+91 98765 43210<br />Mon–Sat, 9 AM – 7 PM IST</p></div>
+                  <div><h4>Call Us</h4><p>+91 77393 ⨯⨯⨯⨯⨯<br />Mon–Sat, 9 AM – 7 PM IST</p></div>
                 </div>
                 <div className="contact-item">
                   <div className="contact-icon">✉️</div>
@@ -41,7 +41,7 @@ function Contact() {
                 </div>
                 <div className="contact-item">
                   <div className="contact-icon">💬</div>
-                  <div><h4>WhatsApp</h4><p>+91 98765 43210<br />Available 24/7 for emergencies</p></div>
+                  <div><h4>WhatsApp</h4><p>+91 98765 ⨯⨯⨯⨯⨯<br />Available 24/7 for emergencies</p></div>
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@ function Contact() {
 
                   <div className="form-group">
                     <label htmlFor='cf-phone' className='form-label'>Phone Number</label>
-                    <input type="tel" id="cf-phone" className="form-control" placeholder="+91 98765 43210" />
+                    <input type="tel" id="cf-phone" className="form-control" placeholder="+91 98765 ⨯⨯⨯⨯⨯" />
                   </div>
                 </div>
 
